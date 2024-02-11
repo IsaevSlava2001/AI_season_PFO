@@ -1,17 +1,16 @@
 version: '3'
 services:
   frontend:
-    container_name: frontend
-    image:
-      cr.yandex/crpp057q4ht1sd0rvi6v/frontendperm:latest
+    build:
+      context: ./fronthacks
+      dockerfile: Dockerfile
     ports:
       - 3000:3000
     depends_on:
       - backend
   backend:
-    container_name: backend
-    image:
-      cr.yandex/crpp057q4ht1sd0rvi6v/backendperm:latest
+    build:
+      context: ./backhack
+      dockerfile: Dockerfile
     ports:
       - 8000:8000
-    restart: always
